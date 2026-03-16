@@ -35,14 +35,14 @@ do
                 	echo "Opcion 4 elegida"
                 	;;
         	5)
-			echo "Opcion 5 elegida"
+					echo "Opcion 5 elegida"
                 	;;
         	6)
                 	echo "Opcion 6 elegida, saliendo."
-			break
+					break
         	        ;;
-		*)
-			echo "Opcion invalida"
+			*)
+					echo "Opcion invalida"
 	esac
 	
 done
