@@ -30,9 +30,21 @@ do
                 	;;
         	3)
                 	echo "Opcion 3 elegida"
-                	;;
+                    if [ -f "$HOME/EPNro1/salida/$FILENAME.txt" ]; then
+                        sort -nk 1 FILENAME.txt # Ordena númericamente -n desde la columna -k=1 el número de legajo
+                    else
+                        echo "Error: El archivo no existe"
+                    fi
+                                    
+                    ;;
         	4)
                 	echo "Opcion 4 elegida"
+                    if [ -f "$HOME/EPNro1/salida/$FILENAME.txt" ]; then
+                        #sort -nrk 5 FILENAME.txt | head -n 10 # NO CONTEMPLA SI EN UNA LINEA HAY 6 COLUMNAS
+                        awk '{print $NF, $0}' FILENAME.txt | sort -nr | cut -d' ' -f2- | head -n 10            
+                    else
+                        echo "Error: El archivo no existe"
+                    fi
                 	;;
         	5)
 					echo "Opcion 5 elegida"
