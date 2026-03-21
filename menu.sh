@@ -34,8 +34,7 @@ do
                         sort -nk 1 FILENAME.txt # Ordena númericamente -n desde la columna -k=1 el número de legajo
                     else
                         echo "Error: El archivo no existe"
-                    fi
-                                    
+                    fi    
                     ;;
         	4)
                 	echo "Opcion 4 elegida"
