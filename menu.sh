@@ -47,7 +47,15 @@ do
                     fi
                 	;;
         	5)
-					echo "Opcion 5 elegida"
+			echo "Opcion 5 elegida"
+                        read -p "Ingresar padron: " padron
+                        ruta_archivo="$HOME/EPNro1/salida/${FILENAME}.txt"
+
+                        if [ -f "$ruta_archivo" ]; then
+                        	grep "$padron" "$ruta_archivo"
+                    	else
+                        	echo "Error: El archivo de resultados no existe aún."
+			fi
                 	;;
         	6)
                 	echo "Opcion 6 elegida, saliendo."
