@@ -1,5 +1,4 @@
 #!/bin/bash
-FILENAME="respuesta"
 SALIDA=~/EPNro1/salida
 ENTRADA=~/EPNro1/entrada
 PROCESO=~/EPNro1/procesado
