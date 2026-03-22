@@ -4,6 +4,7 @@ opcion=-1
 
 if [ "$1" == "-d" ]; then
 	rm -rf ~/EPNro1
+	pkill -f consolidar.sh
 fi
 
 while true
