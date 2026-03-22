@@ -28,6 +28,11 @@ do
                 	;;
         	2)
                 	echo "Opcion 2 elegida"
+                        ruta_archivo="$HOME/EPNro1/consolidar.sh"
+
+                        if [ ! -f "$ruta_archivo" ]; then
+                        	cp ./consolidar.sh $ruta_archivo
+			fi
                 	;;
         	3)
                 	echo "Opcion 3 elegida"
