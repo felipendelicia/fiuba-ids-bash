@@ -2,10 +2,25 @@
 SALIDA=~/EPNro1/salida
 ENTRADA=~/EPNro1/entrada
 PROCESO=~/EPNro1/procesado
-for archivo in "$ENTRADA"/*; do
-if [ ! -e "$archivo" ]; then
-continue
+
+echo "FILENAME: $FILENAME"
+
+if [ ! -f "$SALIDA/$FILENAME.txt" ]; then
+	touch "$SALIDA/$FILENAME.txt"
+	echo "Archivo de salida inexistente, creando..."
 fi
-cat "$archivo" >> "$SALIDA/$FILENAME.txt"
-mv "$archivo" "$PROCESO/"
+
+while true; do
+	sleep 2
+
+	files=$(ls $ENTRADA)
+
+	for item in $files; do
+        	if [ -d "$ENTRADA/$item" ]; then
+			continue
+		fi
+		echo "Archivo añadido $item"
+        	cat "$ENTRADA/$item" >> "$SALIDA/$FILENAME.txt"
+        	mv "$ENTRADA/$item" "$PROCESO/"
+	done
 done
